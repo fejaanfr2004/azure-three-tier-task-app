@@ -32,10 +32,13 @@ def create_app():
         "mssql+pyodbc:///?odbc_connect="
         + quote_plus(odbc_connection)
     )
-
     app.config["SQLALCHEMY_DATABASE_URI"] = connection_string
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
+    app.config["SQLALCHEMY_ENGINE_OPTIONS"] = {
+     "pool_pre_ping": True,
+     "pool_recycle": 1800
+}
     db.init_app(app)
 
     with app.app_context():
