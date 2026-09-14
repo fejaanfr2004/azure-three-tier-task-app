@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Task Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Task Dashboard</h1>
+
+    <h2>Create New Task</h2>
+<form action="/task/add" method="POST" enctype="multipart/form-data">
+
+    <input
+        type="text"
+        name="title"
+        placeholder="Task title"
+        required
+    >
+
+    <textarea
+        name="description"
+        placeholder="Task description"
+    ></textarea>
+
+    <input
+        type="file"
+        name="file"
+    >
+
+    <button type="submit">
+        Add Task
+    </button>
+
+</form>
+
+    <h2>Tasks</h2>
+
+    {% for task in tasks %}
+
+        <div class="task">
+
+            <h3>{{ task.title }}</h3>
+
+            <p>{{ task.description }}</p>
+
+           {% if task.file_name %}
+    <p>
+        Attachment:
+        <strong>{{ task.file_name }}</strong>
+    </p>
+{% endif %}
+            <a href="/task/delete/{{ task.id }}">
+                Delete
+            </a>
+
+        </div>
+
+    {% else %}
+
+        <p>No tasks available.</p>
+
+    {% endfor %}
+
+</div>
+
+</body>
+
+</html>

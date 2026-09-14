@@ -1,14 +1,7 @@
-from flask import Flask
+from app import create_app
 
-app = Flask(__name__)
+app = create_app()
 
-
-@app.route("/")
-def home():
-    return """
-    <h1>Azure Three-Tier Task Manager</h1>
-    <p>Application is running successfully!</p>
-    """
 
 
 if __name__ == "__main__":
