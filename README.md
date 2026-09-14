@@ -460,3 +460,10 @@ az webapp config container show \
 
 View
 
+Screenshots
+
+<img width="1917" height="1036" alt="Screenshot 2026-09-14 140633" src="https://github.com/user-attachments/assets/8d0e4c40-c472-412d-b88f-e1ed012a70dd" />
+<img width="1916" height="983" alt="Screenshot 2026-09-14 140803" src="https://github.com/user-attachments/assets/3a07cadb-1a89-489b-8e28-a188d9c10dc1" />
+
+
+
